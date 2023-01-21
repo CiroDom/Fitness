@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Fitness TA</string>
+
+    <string name="imc">IMC</string>
+    <string name="imc_descricao">IMC é a sigla para Índice de Massa Corporal que serve para avaliar o peso
+        do indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
+        acima ou abaixo do peso desejado.\n\nPreencha os campos de peso e altura para descobrir o seu IMC
+    </string>
+
+    <string name="edit_dica_peso">Peso(Kg)</string>
+    <string name="edit_dica_altura">Altura(cm)</string>
+    <string name="btn_calc">calcular</string>
+
+    <string name="peso_sever_baixo">Severamente abaixo do peso</string>
+    <string name="peso_muito_baixo">Muito abaixo do peso</string>
+    <string name="peso_baixo">Abaixo do peso</string>
+    <string name="peso_normal">Peso adequado</string>
+    <string name="peso_acima">Acima do peso</string>
+    <string name="peso_muito_acima">Muito acima do peso</string>
+    <string name="peso_sever_alto">Severamente acima do peso</string>
+
+    <string name="dialog_titulo">Seu IMC é: %1$.2f</string>
+    <string name="dialog_txt_btn">Botão qualquer</string>
+    <string name="texto_qualquer">Texto qualquer</string>
+
+
+</resources>
