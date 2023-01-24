@@ -1,10 +1,13 @@
-package com.cdom.fitnessta
+package com.cdom.fitnessta.activities
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import com.cdom.fitnessta.recy_view_main_act.AdapterMainAct
+import com.cdom.fitnessta.recy_view_main_act.ItemMain
+import com.cdom.fitnessta.R
 import com.cdom.fitnessta.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 color = Color.YELLOW,
             )
         )
-        val adapter = Adapter(listaItens) { id ->
+        val adapter = AdapterMainAct(listaItens) { id ->
             when (id) {
                 1 -> {
                     val intent = Intent(this, ImcActivity::class.java)

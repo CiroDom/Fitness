@@ -1,15 +1,18 @@
-package com.cdom.fitnessta
+package com.cdom.fitnessta.activities
 
 import android.content.Context
 import android.content.DialogInterface
-import android.inputmethodservice.InputMethodService
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
+import com.cdom.fitnessta.R
 import com.cdom.fitnessta.databinding.ActivityImcBinding
+import com.cdom.fitnessta.banco_de_dados.App
+import com.cdom.fitnessta.recy_view_main_act.model.Calc
 
 class ImcActivity : AppCompatActivity() {
 
@@ -43,9 +46,29 @@ class ImcActivity : AppCompatActivity() {
 
                 setTitle(tituloDialog)
                 setMessage(msgDialog)
-                setPositiveButton(R.string.dialog_txt_btn, object : DialogInterface.OnClickListener {
+                setPositiveButton(R.string.dialog_pstv_btn, object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
-                        //aqui vai rodar depois do clique
+
+                    }
+
+                })
+                setNegativeButton(R.string.dialog_ngtv_btn, object :DialogInterface.OnClickListener{
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+                        Thread {
+                            val app = application as App
+                            val dao = app.bancoDeDados.fornecerDAO()
+
+                            dao.inserir(Calc(tipo = "imc", resposta = imc))
+
+                            runOnUiThread{
+                                val intent = Intent(
+                                    this@ImcActivity,
+                                    ListCalcActivity::class.java
+                                )
+                                intent.putExtra("tipo", "imc")
+                                startActivity(intent)
+                            }
+                        }.start()
                     }
 
                 })

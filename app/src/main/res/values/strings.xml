@@ -20,8 +20,12 @@
     <string name="peso_sever_alto">Severamente acima do peso</string>
 
     <string name="dialog_titulo">Seu IMC é: %1$.2f</string>
-    <string name="dialog_txt_btn">Botão qualquer</string>
+    <string name="dialog_pstv_btn">OK</string>
+    <string name="dialog_ngtv_btn">Salvar</string>
+
+    <string name="salvo">Registro salvo com sucesso</string>
+
+    <string name="lista_resposta">resultado: %1$.2f, data: %2$s</string>
+
     <string name="texto_qualquer">Texto qualquer</string>
-
-
 </resources>

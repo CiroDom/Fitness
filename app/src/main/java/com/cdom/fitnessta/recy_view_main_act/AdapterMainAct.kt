@@ -1,16 +1,19 @@
-package com.cdom.fitnessta
+package com.cdom.fitnessta.recy_view_main_act
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cdom.fitnessta.databinding.ItemMainBinding
 
-class Adapter(
+class AdapterMainAct(
     private val listaItens: List<ItemMain>,
     private val ClickListenerDoItem: (id: Int) -> Unit
-) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+) : RecyclerView.Adapter<AdapterMainAct.VHolder>() {
 
-    inner class ViewHolder(private val binding: ItemMainBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class VHolder(
+        private val binding: ItemMainBinding
+    ): RecyclerView.ViewHolder(binding.root) {
+
         fun especificar(itemEspecifico: ItemMain){
             val img = binding.imgIcone
             val nome = binding.txtNome
@@ -26,15 +29,15 @@ class Adapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VHolder {
         val layInflater = LayoutInflater.from(parent.context)
         val view = ItemMainBinding.inflate(layInflater, parent, false)
 
-        return ViewHolder(view)
+        return VHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val itemEspecifico =listaItens[position]
+    override fun onBindViewHolder(holder: VHolder, position: Int) {
+        val itemEspecifico = listaItens[position]
 
         holder.especificar(itemEspecifico)
     }

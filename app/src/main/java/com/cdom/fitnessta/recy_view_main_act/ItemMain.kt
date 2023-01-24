@@ -1,4 +1,4 @@
-package com.cdom.fitnessta
+package com.cdom.fitnessta.recy_view_main_act
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
